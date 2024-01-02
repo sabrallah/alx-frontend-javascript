@@ -1,11 +1,14 @@
 export default function taskBlock(trueOrFalse) {
-  let task = false;
-  let task2 = true;
+  // Déclaration des variables avec const
+  const task = false;
+  const task2 = true;
 
+  // Bloc conditionnel avec des variables locales redéclarées (masquées)
   if (trueOrFalse) {
-    task = true;
-    task2 = false;
+    const task = true; // eslint-disable-line no-unused-vars
+    const task2 = false; // eslint-disable-line no-unused-vars
   }
 
+  // Retourne un tableau avec les valeurs des variables
   return [task, task2];
 }
