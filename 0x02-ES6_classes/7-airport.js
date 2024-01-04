@@ -1,11 +1,11 @@
-// Airport.js
-export default class Airport {
+class Airport {
   constructor(name, code) {
     this._name = name;
     this._code = code;
   }
 
   toString() {
-    return this._code;
+    return `[object ${this._code}]`;
   }
 }
+export default Airport;
