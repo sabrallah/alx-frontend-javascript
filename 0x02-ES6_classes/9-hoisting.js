@@ -17,7 +17,7 @@ class StudentHolberton {
   }
 
   get fullStudentDescription() {
-    return `${this.fullName} - ${this.holbertonClass.year} - ${this.holbertonClass.location}`;
+    return `${this.firstName} ${this.lastName} - ${this.holbertonClass.year} - ${this.holbertonClass.location}`;
   }
 }
 
