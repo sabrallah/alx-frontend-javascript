@@ -1,5 +1,3 @@
-// 7-airport.js
-
 class Airport {
   constructor(name, code) {
     this._name = name;
@@ -7,8 +5,6 @@ class Airport {
   }
 
   toString() {
-    return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
+    return this._code;
   }
 }
-
-export default Airport;
