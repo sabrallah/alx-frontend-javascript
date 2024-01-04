@@ -8,4 +8,5 @@ class Airport {
     return `[object ${this._code}]`;
   }
 }
+
 export default Airport;
