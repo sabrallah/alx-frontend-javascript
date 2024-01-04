@@ -5,7 +5,6 @@ export class HolbertonClass {
     this._location = location;
   }
 
-  
   // Retrieve the year of the Holberton class.
   get year() {
     return this._year;
@@ -45,7 +44,6 @@ export class StudentHolberton {
 const class2019 = new HolbertonClass(2019, 'San Francisco');
 const class2020 = new HolbertonClass(2020, 'San Francisco');
 
-
 // Create instances of StudentHolberton for various students in the 2019 and 2020 classes.
 const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
 const student2 = new StudentHolberton('John', 'Doe', class2020);
@@ -55,7 +53,6 @@ const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
 // Compile a list of the student instances.
 const listOfStudents = [student1, student2, student3, student4, student5];
-
 
 // Export the list of students as the default export of this module.
 export default listOfStudents;
