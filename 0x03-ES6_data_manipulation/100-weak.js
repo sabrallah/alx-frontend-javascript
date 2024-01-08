@@ -1,21 +1,24 @@
 // 100-weak.js
 
-// Crear una nueva instancia de WeakMap para rastrear el número de veces que se llama a cada endpoint
+// Create a const instance of WeakMap named weakMap.
 const weakMap = new WeakMap();
 
-// Definir la función queryAPI que acepta un objeto endpoint como argumento
+// Function to simulate an API query
+// and track the number of queries for each endpoint.
 function queryAPI(endpoint) {
-  // Obtener el recuento actual de llamadas para este endpoint del weakMap, o inicializar a 0 si no está presente
+  // Get the current count of queries
+  // for the specified endpoint or default to 0.
   let count = weakMap.get(endpoint) || 0;
 
-  // Si el recuento de llamadas es 4 o más, lanzar un error
+  // Check if the count of queries is greater than or equal to 4 (threshold).
   if (count >= 4) {
+    // If the threshold is reached, throw an error indicating high endpoint load.
     throw new Error('Endpoint load is high');
   }
 
-  // Si no se ha alcanzado el límite, incrementar el contador y actualizar el weakMap
+  // Increment the count of queries for the specified endpoint.
   weakMap.set(endpoint, count + 1);
 }
 
-// Exportar la función queryAPI y la instancia weakMap para que puedan ser utilizadas en otros módulos
+// Export the queryAPI function and the weakMap constant.
 export { queryAPI, weakMap };
