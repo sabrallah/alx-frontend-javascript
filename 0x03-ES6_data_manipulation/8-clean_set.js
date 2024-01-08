@@ -2,18 +2,35 @@
 
 /**
  * cleanSet - Returns a string of set values that start with a specific string.
- * @param {Set} set - The Set to clean.
- * @param {string} startString - The starting string to filter set values.
- * @returns {string} - String containing set values
- * that start with the specified string, separated by -.
+ *
+ * @param {Set} aSet - The input Set to filter values from.
+ * @param {string} startString - The specific string that values should start with.
+ * @returns {string} - A string containing values from the set that start with the specified string.
  */
-function cleanSet(set, startString) {
-  const setArray = Array.from(set);
-  const filteredValues = setArray.filter((value) => value.startsWith(startString));
-  const cleanedValues = filteredValues.map((value) => value.slice(startString.length));
-  const resultString = cleanedValues.join('-');
-  return resultString;
-}
+export default function cleanSet(aSet, startString) {
+  // Initialize an empty array to store filtered values.
+  const res = [];
 
-// Exporting the function to make it available for other modules
-export default cleanSet;
+  // Initialize an empty string to store the final result.
+  let result = '';
+
+  // Check if startString is provided and is a string.
+  if (startString && typeof startString === 'string') {
+    // Loop through each element in the set.
+    for (const set of aSet) {
+      // Check if the element starts with the specified string.
+      if (set && set.startsWith(startString)) {
+        // If it does, extract the substring after the startString.
+        const temp = set.slice(startString.length);
+        // Push the extracted substring into the result array.
+        res.push(temp);
+      }
+    }
+
+    // Join the result array using '-' as a separator to create the final string.
+    result = res.join('-');
+  }
+
+  // Return the final result.
+  return result;
+}
