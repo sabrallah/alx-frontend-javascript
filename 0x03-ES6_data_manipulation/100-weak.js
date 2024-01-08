@@ -8,7 +8,7 @@ const weakMap = new WeakMap();
 function queryAPI(endpoint) {
   // Get the current count of queries
   // for the specified endpoint or default to 0.
-  let count = weakMap.get(endpoint) || 0;
+  const count = weakMap.get(endpoint) || 0;
 
   // Check if the count of queries is greater than or equal to 4 (threshold).
   if (count >= 4) {
